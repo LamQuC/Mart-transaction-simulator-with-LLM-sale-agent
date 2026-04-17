@@ -1,0 +1,132 @@
+categories:
+  - name: "Thực phẩm"
+    products:
+      - { name: "Mì tôm" , price: 5000, stock: 50 }
+      - { name: "Bánh mì" , price: 10000, stock: 30 }
+      - { name: "Sữa" , price: 15000, stock: 20 }
+      - { name: "Trứng" , price: 20000, stock: 40 }
+  - name: "Công cụ"
+    products:
+      - { name: "Búa" , price: 50000, stock: 10 }
+      - { name: "Cưa" , price: 75000, stock: 5 }
+      - { name: "Tua vít" , price: 30000, stock: 15 }
+      - { name: "Kìm" , price: 40000, stock: 8 }
+  - name: "Đồ điện tử"
+    products:
+      - { name: "Điện thoại" , price: 2000000, stock: 20 }
+      - { name: "Laptop" , price: 15000000, stock: 10 }
+      - { name: "Máy tính bảng" , price: 5000000, stock: 15 }
+      - { name: "Tai nghe" , price: 1000000, stock: 25 }
+  - name: "Quần áo"
+    products:
+      - { name: "Áo thun" , price: 200000, stock: 50 }
+      - { name: "Quần jeans" , price: 500000, stock: 30 }
+      - { name: "Áo khoác" , price: 800000, stock: 20 }
+      - { name: "Giày thể thao" , price: 1000000, stock: 15 }
+  - name: "Đồ gia dụng"
+    products:
+      - { name: "Nồi cơm điện" , price: 1500000, stock: 10 }
+      - { name: "Máy giặt" , price: 5000000, stock: 5 }
+      - { name: "Tủ lạnh" , price: 8000000, stock: 8 }
+      - { name: "Lò vi sóng" , price: 2000000, stock: 12 }
+  - name: "Đồ chơi"
+    products:
+      - { name: "Búp bê" , price: 500000, stock: 20 }
+      - { name: "Xe đồ chơi" , price: 300000, stock: 15 }
+      - { name: "Xếp hình" , price: 200000, stock: 25 }
+      - { name: "Đồ chơi điều khiển từ xa" , price: 1000000, stock: 10 }
+  - name: "Sách"
+    products: 
+      - { name: "Tiểu thuyết" , price: 100000, stock: 50 }
+      - { name: "Sách khoa học" , price: 150000, stock: 30 }
+      - { name: "Sách thiếu nhi" , price: 50000, stock: 20 }
+      - { name: "Sách nấu ăn" , price: 200000, stock: 15 }
+  - name: "Đồ thể thao"
+    products:
+      - { name: "Bóng đá" , price: 500000, stock: 20 }
+      - { name: "Bóng rổ" , price: 300000, stock: 15 }
+      - { name: "Vợt cầu lông" , price: 200000, stock: 25 }
+      - { name: "Giày chạy bộ" , price: 1000000, stock: 10 }
+  - name: "Đồ trang sức"
+    products:
+      - { name: "Nhẫn" , price: 500000, stock: 20 }
+      - { name: "Vòng cổ" , price: 300000, stock: 15 }
+      - { name: "Bông tai" , price: 200000, stock: 25 }
+      - { name: "Lắc tay" , price: 1000000, stock: 10 }
+  - name: "Đồ nội thất"
+    products:
+      - { name: "Bàn" , price: 2000000, stock: 10 }
+      - { name: "Ghế" , price: 1000000, stock: 20 }
+      - { name: "Tủ" , price: 5000000, stock: 5 }
+      - { name: "Giường" , price: 8000000, stock: 8 }
+  - name: "Đồ điện gia dụng"
+    products: 
+      - { name: "Máy lạnh" , price: 5000000, stock: 10 }
+      - { name: "Quạt điện" , price: 1000000, stock: 20 }
+      - { name: "Máy sưởi" , price: 2000000, stock: 5 }
+      - { name: "Đèn ngủ" , price: 500000, stock: 15 }
+  - name: "Đồ dùng học tập"
+    products:
+      - { name: "Bút" , price: 5000, stock: 100 }
+      - { name: "Vở" , price: 10000, stock: 50 }
+      - { name: "Thước kẻ" , price: 15000, stock: 30 }
+      - { name: "Tẩy" , price: 2000, stock: 200 }
+  - name: "Đồ dùng văn phòng"
+    products:
+      - { name: "Bàn làm việc" , price: 2000000, stock: 10 }
+      - { name: "Ghế văn phòng" , price: 1000000, stock: 20 }
+      - { name: "Tủ hồ sơ" , price: 5000000, stock: 5 }
+      - { name: "Đèn bàn" , price: 500000, stock: 15 }
+  - name: "Đồ dùng cá nhân"
+    products:
+      - { name: "Bàn chải đánh răng" , price: 50000, stock: 50 }
+      - { name: "Kem đánh răng" , price: 100000, stock: 30 }
+      - { name: "Sữa tắm" , price: 150000, stock: 20 }
+      - { name: "Dầu gội" , price: 200000, stock: 40 }
+  - name: "Đồ dùng nhà bếp"
+    products:
+      - { name: "Nồi" , price: 500000, stock: 20 }
+      - { name: "Chảo" , price: 300000, stock: 15 }
+      - { name: "Dao" , price: 200000, stock: 25 }
+      - { name: "Thớt" , price: 100000, stock: 10 }
+customers:
+  - name: "Học sinh"
+    prefernece: "Đồ dùng học tập"
+    patience: 10
+  - name: "Thợ xây dựng"
+    prefernece: "Công cụ"
+    patience: 20
+  - name: "Người nội trợ"
+    prefernece: "Đồ gia dụng"
+    patience: 15
+  - name: "Trẻ em"
+    prefernece: "Đồ chơi"
+    patience: 5
+  - name: "Đầu bếp"
+    prefernece: "Đồ dùng nhà bếp"
+    patience: 25
+  - name: "Vận động viên"
+    prefernece: "Đồ thể thao"
+    patience: 30  
+  - name: "Người yêu công nghệ"
+    prefernece: "Đồ điện tử"  
+    patience: 20
+  - name: "Người yêu thời trang"
+    prefernece: "Quần áo"
+    patience: 15
+  - name: "Người yêu trang sức"
+    prefernece: "Đồ trang sức"
+    patience: 10
+  - name: "Người yêu nội thất"
+    prefernece: "Đồ nội thất" 
+    patience: 20
+  - name: "Người yêu điện gia dụng"
+    prefernece: "Đồ điện gia dụng"  
+    patience: 25
+  - name: "Nhân viên văn phòng" 
+    prefernece: "Đồ dùng văn phòng"  
+    patience: 15
+  - name: "Người yêu thực phẩm"
+    prefernece: "Thực phẩm"
+    patience: 10
+  
