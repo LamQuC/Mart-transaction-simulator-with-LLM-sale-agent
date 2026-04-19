@@ -71,8 +71,8 @@ Edit `.env` in the project root:
 DB_HOST=localhost
 DB_PORT=5433
 DB_NAME=aepe_db
-DB_USER=lam_admin
-DB_PASS=lam_admin_pass
+DB_USER=your_name
+DB_PASS=your_pass
 
 OLLAMA_HOST=http://localhost:11434
 MODEL_NAME=qwen2.5:1.5b
