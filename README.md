@@ -142,13 +142,3 @@ streamlit run src/dashboard/app.py
 - **dbt Errors:** Ensure all models reference the correct columns (see `int_transaction_details` for schema).
 - **Streamlit Errors:** Use `st.rerun()` instead of deprecated `st.experimental_rerun()` if needed.
 
----
-
-## Author
-
-- Project by [Your Name/Team]
-- For questions or contributions, please open an issue or pull request.
-
----
-
-Feel free to further customize this README for your team or deployment!
