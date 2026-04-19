@@ -1,10 +1,10 @@
 categories:
-  # - name: "Thực phẩm"
-  #   products:
-  #     - { name: "Mì tôm" , price: 5000, stock: 50 }
-  #     - { name: "Bánh mì" , price: 10000, stock: 30 }
-  #     - { name: "Sữa" , price: 15000, stock: 20 }
-  #     - { name: "Trứng" , price: 20000, stock: 40 }
+  - name: "Thực phẩm"
+    products:
+      - { name: "Mì tôm" , price: 5000, stock: 5 }
+      - { name: "Bánh mì" , price: 10000, stock: 3 }
+      - { name: "Sữa" , price: 15000, stock: 2 }
+      - { name: "Trứng" , price: 20000, stock: 4 }
   - name: "Công cụ"
     products:
       - { name: "Búa" , price: 50000, stock: 5 }
@@ -83,12 +83,12 @@ categories:
   #     - { name: "Kem đánh răng" , price: 100000, stock: 30 }
   #     - { name: "Sữa tắm" , price: 150000, stock: 20 }
   #     - { name: "Dầu gội" , price: 200000, stock: 40 }
-  # - name: "Đồ dùng nhà bếp"
-  #   products:
-  #     - { name: "Nồi" , price: 500000, stock: 20 }
-  #     - { name: "Chảo" , price: 300000, stock: 15 }
-  #     - { name: "Dao" , price: 200000, stock: 25 }
-  #     - { name: "Thớt" , price: 100000, stock: 10 }
+  - name: "Đồ dùng nhà bếp"
+    products:
+      - { name: "Nồi" , price: 500000, stock: 2 }
+      - { name: "Chảo" , price: 300000, stock: 1 }
+      - { name: "Dao" , price: 200000, stock: 2 }
+      - { name: "Thớt" , price: 100000, stock: 1 }
 customers:
   - name: "Học sinh"
     preference: "Đồ dùng học tập"
@@ -102,9 +102,9 @@ customers:
   # - name: "Trẻ em"
   #   preference: "Đồ chơi"
   #   patience: 5
-  # - name: "Đầu bếp"
-  #   preference: "Đồ dùng nhà bếp"
-  #   patience: 25
+  - name: "Đầu bếp"
+    preference: "Đồ dùng nhà bếp"
+    patience: 2
   # - name: "Vận động viên"
   #   preference: "Đồ thể thao"
   #   patience: 30  
@@ -126,7 +126,7 @@ customers:
   # - name: "Nhân viên văn phòng" 
   #   preference: "Đồ dùng văn phòng"  
   #   patience: 15
-  # - name: "Người yêu thực phẩm"
-  #   preference: "Thực phẩm"
-  #   patience: 10
+  - name: "Người yêu thực phẩm"
+    preference: "Thực phẩm"
+    patience: 1
   
