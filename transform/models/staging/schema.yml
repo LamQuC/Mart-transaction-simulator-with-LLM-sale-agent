@@ -1,0 +1,10 @@
+version: 2
+sources:
+  - name: public
+    tables:
+      - name: customers
+      - name: inventory
+      - name: orders
+      - name: suppliers
+      - name: stores
+      - name: simulation_logs

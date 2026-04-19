@@ -12,24 +12,35 @@ def seed_database():
     with open('config/world_settings.yaml', 'r', encoding='utf-8') as f:
         config = yaml.safe_load(f)
 
-    # 2. Lấy kết nối từ module core
     conn = get_db_connection()
-    if not conn: return
-    
+    if not conn:
+        return
     cur = conn.cursor()
     try:
+        # Truncate các bảng liên quan
         cur.execute("TRUNCATE TABLE inventory RESTART IDENTITY CASCADE;")
-        
+        cur.execute("TRUNCATE TABLE customers RESTART IDENTITY CASCADE;")
+        cur.execute("TRUNCATE TABLE suppliers RESTART IDENTITY CASCADE;")
+        cur.execute("TRUNCATE TABLE stores RESTART IDENTITY CASCADE;")
+        cur.execute("TRUNCATE TABLE orders RESTART IDENTITY CASCADE;")
+
+        # Seed inventory
         inventory_data = []
         for cat in config['categories']:
             for prod in cat['products']:
                 inventory_data.append((
                     prod['name'], cat['name'], prod['price'], prod['price'], prod['stock']
                 ))
-
         query = "INSERT INTO inventory (name, category, base_price, current_price, stock_quantity) VALUES %s"
         execute_values(cur, query, inventory_data)
-        
+
+        # Seed customers
+        customer_data = []
+        for c in config.get('customers', []):
+            customer_data.append((c['name'], c['preference'], c['patience']))
+        if customer_data:
+            query = "INSERT INTO customers (name, preference, patience) VALUES %s"
+            execute_values(cur, query, customer_data)
         conn.commit()
         print("✅ Seed dữ liệu thành công!")
     finally:
