@@ -71,8 +71,8 @@ Edit `.env` in the project root:
 DB_HOST=localhost
 DB_PORT=5433
 DB_NAME=aepe_db
-DB_USER=lam_admin
-DB_PASS=lam_admin_pass
+DB_USER=your_name
+DB_PASS=your_pass
 
 OLLAMA_HOST=http://localhost:11434
 MODEL_NAME=qwen2.5:1.5b
@@ -147,4 +147,13 @@ streamlit run src/dashboard/app.py
 - **dbt Errors:** Ensure all models reference the correct columns (see `int_transaction_details` for schema).
 - **Streamlit Errors:** Use `st.rerun()` instead of deprecated `st.experimental_rerun()` if needed.
 
+---
 
+## Author
+
+- Project by [Your Name/Team]
+- For questions or contributions, please open an issue or pull request.
+
+---
+
+Feel free to further customize this README for your team or deployment!
