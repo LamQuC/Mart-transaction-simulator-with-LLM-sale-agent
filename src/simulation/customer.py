@@ -66,9 +66,9 @@ class CustomerAgent:
                     self.log_event(cur, "BUY", p_name, f"Đã chốt đơn {p_name} giá {price}")
                     # Ghi nhận vào bảng orders/transactions
                     cur.execute("""
-                        INSERT INTO orders (customer_id, customer_name, product_name, price, quantity, order_time, action_type)
-                        VALUES (%s, %s, %s, %s, %s, NOW(), %s)
-                    """, (self.customer_id, self.name, p_name, price, 1, "BUY"))
+                        INSERT INTO orders (customer_id, customer_name, product_name, price, quantity, order_time, action_type, status, payment_method, discount_amount)
+                        VALUES (%s, %s, %s, %s, %s, NOW(), %s, %s, %s, %s)
+                    """, (self.customer_id, self.name, p_name, price, 1, "BUY", "shipped", "cash", 0))
                     self.current_patience = self.patience_limit # Mua được hàng là vui, reset kiên nhẫn
                 else:
                     # Trường hợp hiếm: Vừa thấy còn hàng nhưng lúc bấm UPDATE thì khách khác nẫng tay trên

@@ -21,20 +21,28 @@ def seed_database():
         cur.execute("TRUNCATE TABLE inventory RESTART IDENTITY CASCADE;")
         cur.execute("TRUNCATE TABLE customers RESTART IDENTITY CASCADE;")
         cur.execute("TRUNCATE TABLE suppliers RESTART IDENTITY CASCADE;")
-        cur.execute("TRUNCATE TABLE stores RESTART IDENTITY CASCADE;")
+        
         cur.execute("TRUNCATE TABLE orders RESTART IDENTITY CASCADE;")
 
-        # Seed inventory
+        # Seed inventory (bổ sung các trường mới: brand, cost_price, list_price, description)
         inventory_data = []
         for cat in config['categories']:
             for prod in cat['products']:
                 inventory_data.append((
-                    prod['name'], cat['name'], prod['price'], prod['price'], prod['stock']
+                    prod.get('name'),
+                    cat['name'],
+                    prod.get('brand', 'NoBrand'),
+                    prod.get('cost_price', prod.get('price', 0)),
+                    prod.get('list_price', prod.get('price', 0)),
+                    prod.get('price', 0),
+                    prod.get('price', 0),
+                    prod.get('stock', 0),
+                    prod.get('description', '')
                 ))
-        query = "INSERT INTO inventory (name, category, base_price, current_price, stock_quantity) VALUES %s"
+        query = "INSERT INTO inventory (name, category, brand, cost_price, list_price, base_price, current_price, stock_quantity, description) VALUES %s"
         execute_values(cur, query, inventory_data)
 
-        # Seed customers
+        # Seed customers (không đổi)
         customer_data = []
         for c in config.get('customers', []):
             customer_data.append((c['name'], c['preference'], c['patience']))

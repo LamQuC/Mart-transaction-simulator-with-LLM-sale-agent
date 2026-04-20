@@ -36,9 +36,9 @@ def restock_inventory():
             # Ghi lại giá bán hiện tại (current_price)
             # để dbt có thể lấy giá này nhân với 50% ra tiền vốn.
             cur.execute("""
-                INSERT INTO orders (customer_id, customer_name, product_name, price, quantity, order_time, action_type)
-                VALUES (%s, %s, %s, %s, %s, NOW(), %s)
-            """, (None, "SUPPLIER_SYSTEM", name, current_price, restock_qty, "RESTOCK"))
+                INSERT INTO orders (customer_id, customer_name, product_name, price, quantity, order_time, action_type, status, payment_method, discount_amount)
+                VALUES (%s, %s, %s, %s, %s, NOW(), %s, %s, %s, %s)
+            """, (None, "SUPPLIER_SYSTEM", name, current_price, restock_qty, "RESTOCK", "shipped", "bank_transfer", 0))
             
             print(f"📦 [Supplier] Đã nhập {restock_qty} {name} (Giá thị trường: {current_price:,.0f} VND)")
 

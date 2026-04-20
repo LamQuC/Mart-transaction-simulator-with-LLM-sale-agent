@@ -1,5 +1,5 @@
 {{ config(materialized='view') }}
--- Join transactions with customers, products, stores for richer context
+-- Join transactions with customers, products for richer context
 select
     t.order_id,
     t.customer_id,

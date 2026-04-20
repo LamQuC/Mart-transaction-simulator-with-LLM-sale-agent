@@ -1,4 +1,4 @@
--- Lưu lịch sử quyết định của AI về giá
+
 CREATE TABLE IF NOT EXISTS ai_decision_history (
     id SERIAL PRIMARY KEY,
     sku_id INT REFERENCES inventory(sku_id),
@@ -7,15 +7,18 @@ CREATE TABLE IF NOT EXISTS ai_decision_history (
     reason TEXT,
     decided_at TIMESTAMP DEFAULT NOW()
 );
--- Migration SQL: Tạo các bảng chính cho mô phỏng doanh nghiệp
 
 CREATE TABLE IF NOT EXISTS inventory (
     sku_id SERIAL PRIMARY KEY,
-    name VARCHAR(100),
+    name VARCHAR(255),
     category VARCHAR(100),
+    brand VARCHAR(100),
+    cost_price INT,
+    list_price INT,
     base_price INT,
     current_price INT,
-    stock_quantity INT
+    stock_quantity INT,
+    description TEXT
 );
 
 CREATE TABLE IF NOT EXISTS customers (
@@ -31,12 +34,6 @@ CREATE TABLE IF NOT EXISTS suppliers (
     contact VARCHAR(50)
 );
 
-CREATE TABLE IF NOT EXISTS stores (
-    store_id SERIAL PRIMARY KEY,
-    name VARCHAR(100),
-    location VARCHAR(100)
-);
-
 CREATE TABLE IF NOT EXISTS orders (
     order_id SERIAL PRIMARY KEY,
     customer_id INT REFERENCES customers(customer_id),
@@ -45,7 +42,10 @@ CREATE TABLE IF NOT EXISTS orders (
     price INT,
     quantity INT,
     order_time TIMESTAMP,
-    action_type VARCHAR(20)
+    action_type VARCHAR(20),
+    status VARCHAR(20),
+    payment_method VARCHAR(50),
+    discount_amount INT DEFAULT 0
 );
 
 CREATE TABLE IF NOT EXISTS simulation_logs (

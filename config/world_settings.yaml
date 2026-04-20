@@ -1,16 +1,16 @@
 categories:
   - name: "Thực phẩm"
     products:
-      - { name: "Mì tôm" , price: 5000, stock: 5 }
-      - { name: "Bánh mì" , price: 10000, stock: 3 }
-      - { name: "Sữa" , price: 15000, stock: 2 }
-      - { name: "Trứng" , price: 20000, stock: 4 }
+      - { name: "Mì tôm", price: 5000, stock: 5, brand: "Hảo Hảo", cost_price: 4000, list_price: 6000, description: "Mì ăn liền vị tôm chua cay" }
+      - { name: "Bánh mì", price: 10000, stock: 3, brand: "ABC", cost_price: 7000, list_price: 12000, description: "Bánh mì Việt Nam truyền thống" }
+      - { name: "Sữa", price: 15000, stock: 2, brand: "Vinamilk", cost_price: 12000, list_price: 18000, description: "Sữa tươi tiệt trùng" }
+      - { name: "Trứng", price: 20000, stock: 4, brand: "CP", cost_price: 15000, list_price: 22000, description: "Trứng gà sạch" }
   - name: "Công cụ"
     products:
-      - { name: "Búa" , price: 50000, stock: 5 }
-      - { name: "Cưa" , price: 75000, stock: 5 }
-      - { name: "Tua vít" , price: 30000, stock: 5 }
-      - { name: "Kìm" , price: 40000, stock: 5 }
+      - { name: "Búa", price: 50000, stock: 5, brand: "Tolsen", cost_price: 40000, list_price: 60000, description: "Búa thép cán nhựa" }
+      - { name: "Cưa", price: 75000, stock: 5, brand: "Stanley", cost_price: 60000, list_price: 90000, description: "Cưa tay đa năng" }
+      - { name: "Tua vít", price: 30000, stock: 5, brand: "Bosch", cost_price: 20000, list_price: 35000, description: "Tua vít 2 đầu" }
+      - { name: "Kìm", price: 40000, stock: 5, brand: "Total", cost_price: 30000, list_price: 50000, description: "Kìm cắt đa năng" }
   # - name: "Đồ điện tử"
   #   products:
   #     - { name: "Điện thoại" , price: 2000000, stock: 20 }
@@ -25,10 +25,10 @@ categories:
   #     - { name: "Giày thể thao" , price: 1000000, stock: 15 }
   - name: "Đồ gia dụng"
     products:
-      - { name: "Nồi cơm điện" , price: 1500000, stock: 5 }
-      - { name: "Máy giặt" , price: 5000000, stock: 5 }
-      - { name: "Tủ lạnh" , price: 8000000, stock: 5 }
-      - { name: "Lò vi sóng" , price: 2000000, stock: 5 }
+      - { name: "Nồi cơm điện", price: 1500000, stock: 5, brand: "Sharp", cost_price: 1200000, list_price: 1700000, description: "Nồi cơm điện 1.8L" }
+      - { name: "Máy giặt", price: 5000000, stock: 5, brand: "LG", cost_price: 4000000, list_price: 5500000, description: "Máy giặt cửa ngang 8kg" }
+      - { name: "Tủ lạnh", price: 8000000, stock: 5, brand: "Samsung", cost_price: 6500000, list_price: 9000000, description: "Tủ lạnh 2 cánh 300L" }
+      - { name: "Lò vi sóng", price: 2000000, stock: 5, brand: "Panasonic", cost_price: 1500000, list_price: 2200000, description: "Lò vi sóng 23L" }
   # - name: "Đồ chơi"
   #   products:
   #     - { name: "Búp bê" , price: 500000, stock: 20 }
@@ -67,10 +67,10 @@ categories:
   #     - { name: "Đèn ngủ" , price: 500000, stock: 15 }
   - name: "Đồ dùng học tập"
     products:
-      - { name: "Bút" , price: 5000, stock: 5 }
-      - { name: "Vở" , price: 10000, stock: 5 }
-      - { name: "Thước kẻ" , price: 15000, stock: 5 }
-      - { name: "Tẩy" , price: 2000, stock: 5 }
+      - { name: "Bút", price: 5000, stock: 5, brand: "Thiên Long", cost_price: 3000, list_price: 6000, description: "Bút bi xanh" }
+      - { name: "Vở", price: 10000, stock: 5, brand: "Campus", cost_price: 7000, list_price: 12000, description: "Vở 200 trang" }
+      - { name: "Thước kẻ", price: 15000, stock: 5, brand: "Deli", cost_price: 10000, list_price: 18000, description: "Thước nhựa 30cm" }
+      - { name: "Tẩy", price: 2000, stock: 5, brand: "Staedtler", cost_price: 1000, list_price: 3000, description: "Tẩy trắng nhỏ" }
   # - name: "Đồ dùng văn phòng"
   #   products:
   #     - { name: "Bàn làm việc" , price: 2000000, stock: 10 }
@@ -85,10 +85,10 @@ categories:
   #     - { name: "Dầu gội" , price: 200000, stock: 40 }
   - name: "Đồ dùng nhà bếp"
     products:
-      - { name: "Nồi" , price: 500000, stock: 2 }
-      - { name: "Chảo" , price: 300000, stock: 1 }
-      - { name: "Dao" , price: 200000, stock: 2 }
-      - { name: "Thớt" , price: 100000, stock: 1 }
+      - { name: "Nồi", price: 500000, stock: 2, brand: "Sunhouse", cost_price: 350000, list_price: 600000, description: "Nồi inox 24cm" }
+      - { name: "Chảo", price: 300000, stock: 1, brand: "Elmich", cost_price: 200000, list_price: 350000, description: "Chảo chống dính 28cm" }
+      - { name: "Dao", price: 200000, stock: 2, brand: "KAI", cost_price: 120000, list_price: 250000, description: "Dao thái đa năng" }
+      - { name: "Thớt", price: 100000, stock: 1, brand: "Lock&Lock", cost_price: 70000, list_price: 150000, description: "Thớt nhựa kháng khuẩn" }
 customers:
   - name: "Học sinh"
     preference: "Đồ dùng học tập"

@@ -69,8 +69,16 @@ if not summary_df.empty:
 
 st.markdown("---")
 
+
 # 6. PHÂN TÁCH TABS ĐỂ TRÁNH LỖI KẸT LOOP
-tab_ai, tab_sales, tab_inv = st.tabs(["🤖 Quyết định AI", "📈 Biểu đồ Doanh thu", "📦 Tồn kho & Logs"])
+tab_ai, tab_sales, tab_inv, tab_price_hist, tab_snapshot, tab_rfm = st.tabs([
+    "🤖 Quyết định AI", 
+    "📈 Biểu đồ Doanh thu", 
+    "📦 Tồn kho & Logs",
+    "💹 Lịch sử giá (SCD2)",
+    "📊 Snapshot tồn kho",
+    "👥 RFM Analysis"
+])
 
 with tab_ai:
     st.subheader("Nhật ký điều tiết giá của AI Manager")
@@ -117,6 +125,51 @@ with tab_inv:
     st.subheader("Nhật ký sự kiện (Simulation Logs)")
     logs_df = get_query("SELECT created_at, action_type, message FROM simulation_logs ORDER BY created_at DESC LIMIT 10")
     st.table(logs_df)
+
+# Tab: Lịch sử giá sản phẩm (SCD2)
+with tab_price_hist:
+    st.subheader("Lịch sử thay đổi giá sản phẩm (SCD Type 2)")
+    price_hist = get_query("""
+        SELECT sku_id, name, brand, current_price, valid_from
+        FROM scd2_inventory_price_history
+        ORDER BY sku_id, valid_from DESC
+        LIMIT 100
+    """)
+    if not price_hist.empty:
+        st.dataframe(price_hist, use_container_width=True)
+        st.line_chart(price_hist.set_index('valid_from').groupby('name')['current_price'].last())
+    else:
+        st.info("Chưa có lịch sử giá.")
+
+# Tab: Snapshot tồn kho cuối ngày
+with tab_snapshot:
+    st.subheader("Snapshot tồn kho cuối ngày")
+    snap_df = get_query("""
+        SELECT product_name, snapshot_date, inventory_level
+        FROM mart_inventory_snapshot
+        ORDER BY product_name, snapshot_date
+        LIMIT 200
+    """)
+    if not snap_df.empty:
+        st.line_chart(snap_df.pivot(index='snapshot_date', columns='product_name', values='inventory_level'))
+        st.dataframe(snap_df, use_container_width=True)
+    else:
+        st.info("Chưa có dữ liệu snapshot tồn kho.")
+
+# Tab: RFM Analysis
+with tab_rfm:
+    st.subheader("Phân tích khách hàng theo RFM (Recency, Frequency, Monetary)")
+    rfm_df = get_query("""
+        SELECT customer_id, customer_name, recency, frequency, monetary
+        FROM features_rfm_analysis
+        ORDER BY monetary DESC
+        LIMIT 100
+    """)
+    if not rfm_df.empty:
+        st.dataframe(rfm_df, use_container_width=True)
+        st.bar_chart(rfm_df.set_index('customer_name')['monetary'])
+    else:
+        st.info("Chưa có dữ liệu RFM.")
 
 # 7. CƠ CHẾ TỰ ĐỘNG CẬP NHẬT (REAL-TIME)
 # Thay vì dùng while True gây kẹt, ta dùng sleep và rerun ở cuối

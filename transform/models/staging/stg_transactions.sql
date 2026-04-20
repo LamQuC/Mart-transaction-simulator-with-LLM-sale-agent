@@ -10,9 +10,12 @@ SELECT
     quantity,
     order_time,
     action_type,
+    status,
+    payment_method,
+    discount_amount,
     -- Logic: Nếu khách mua thì tính Doanh thu, nếu Supplier nhập thì tính Chi phí (50%)
     CASE 
-        WHEN action_type = 'BUY' THEN (price * quantity) 
+        WHEN action_type = 'BUY' THEN (price * quantity - COALESCE(discount_amount,0))
         ELSE 0 
     END as gross_revenue,
     CASE 

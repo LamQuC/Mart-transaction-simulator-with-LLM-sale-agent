@@ -4,7 +4,6 @@ sources:
     tables:
       - name: customers
       - name: inventory
-      - name: orders
       - name: suppliers
       - name: stores
       - name: simulation_logs
