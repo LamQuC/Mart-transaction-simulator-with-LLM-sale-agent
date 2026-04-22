@@ -5,5 +5,5 @@ sources:
       - name: customers
       - name: inventory
       - name: suppliers
-      - name: stores
+      - name: orders
       - name: simulation_logs
