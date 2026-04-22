@@ -149,11 +149,3 @@ streamlit run src/dashboard/app.py
 
 ---
 
-## Author
-
-- Project by [Your Name/Team]
-- For questions or contributions, please open an issue or pull request.
-
----
-
-Feel free to further customize this README for your team or deployment!
